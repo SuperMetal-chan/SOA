@@ -1,5 +1,7 @@
 
-package lab1.country;
+package lab1.generate_client;
+
+import lab1.country.Country;
 
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlElementDecl;
@@ -37,17 +39,17 @@ public class ObjectFactory {
      * Create an instance of {@link Country }
      * 
      */
-    public Country createCountry() {
-        return new Country();
-    }
+//    public Country createCountry() {
+//        return new Country();
+//    }
 
     /**
      * Create an instance of {@link CountryArray }
      * 
      */
-    public CountryArray createCountryArray() {
-        return new CountryArray();
-    }
+//    public CountryArray createCountryArray() {
+//        return new CountryArray();
+//    }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Country }{@code >}}

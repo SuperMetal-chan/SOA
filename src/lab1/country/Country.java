@@ -42,6 +42,14 @@ public class Country {
     protected String name;
     protected int population;
 
+    public Country(String name, int population, int id, float area) {
+        this.area = area;
+        this.name = name;
+        this.population = population;
+        this.id = id;
+    }
+
+
     /**
      * Gets the value of the area property.
      * 

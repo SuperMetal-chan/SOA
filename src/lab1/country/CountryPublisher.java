@@ -1,7 +1,5 @@
 package lab1.country;
 
-import lab1.country.CountryWebserviceImpl;
-
 import javax.xml.ws.Endpoint;
 public class CountryPublisher {
     //точка входа в JVM, выполнение любой Java программы начинается с main-метода

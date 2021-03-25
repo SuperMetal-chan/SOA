@@ -1,5 +1,7 @@
 
-package lab1.country;
+package lab1.generate_client;
+
+import lab1.country.CountryWebService;
 
 import java.net.MalformedURLException;
 import java.net.URL;

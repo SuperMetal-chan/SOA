@@ -1,6 +1,8 @@
 
 package lab1.country;
 
+import lab1.generate_client.ObjectFactory;
+
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
@@ -45,7 +47,7 @@ public interface CountryWebService {
     @WebMethod
     @WebResult(partName = "return")
     @Action(input = "http://country.lab1/CountryWebService/getAllCountriesRequest", output = "http://country.lab1/CountryWebService/getAllCountriesResponse")
-    public CountryArray getAllCountries();
+    public Country[] getAllCountries();
 
     /**
      * 

@@ -1,5 +1,7 @@
 
-package lab1.country;
+package lab1.generate_client;
+
+import lab1.country.Country;
 
 import java.util.ArrayList;
 import java.util.List;
