@@ -1,57 +1,117 @@
+
 package lab1.country;
 
-import javax.xml.bind.annotation.XmlRootElement;
-import java.util.Random;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlType;
 
-@XmlRootElement //аннотация для JAXB, чтобы он начал преобразовывать объект в XML и обратно
+
+/**
+ * <p>Java class for country complex type.
+ * 
+ * <p>The following schema fragment specifies the expected content contained within this class.
+ * 
+ * <pre>
+ * &lt;complexType name="country">
+ *   &lt;complexContent>
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       &lt;sequence>
+ *         &lt;element name="area" type="{http://www.w3.org/2001/XMLSchema}float"/>
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="population" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *       &lt;/sequence>
+ *     &lt;/restriction>
+ *   &lt;/complexContent>
+ * &lt;/complexType>
+ * </pre>
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "country", propOrder = {
+    "area",
+    "id",
+    "name",
+    "population"
+})
 public class Country {
-    private float area;
-    private String name;
-    private int population;
-    private int id;
 
-    //конструктор по-умолчанию, инициализирует переменные значениями по-умолчанию
-    public Country() {
-        this.name = "Test";
-        this.area = 0;
-        this.id = new Random().nextInt(); //генерация id при каждом создании объекта
-        this.population = 0;
-    }
+    protected float area;
+    protected int id;
+    protected String name;
+    protected int population;
 
-    //параметризованный конструктор, позволяет задавать значения атрибутов при создании объекта
-    public Country(String name, int population, int id, float area) {
-        this.area = area;
-        this.name = name;
-        this.population = population;
-        this.id = id;
-    }
-
-    /*набор getter/setter-ов для доступа к переменным объекта,
-    также они в большинстве случаев нужны для корректной работы JAXB и прочих фреймворков*/
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-    public int getPopulation() {
-        return this.population;
-    }
-    public void setPopulation(int population) {
-        this.population = population;
-    }
+    /**
+     * Gets the value of the area property.
+     * 
+     */
     public float getArea() {
-        return this.area;
-    }
-    public void setArea(float area) {
-        this.area = area;
+        return area;
     }
 
+    /**
+     * Sets the value of the area property.
+     * 
+     */
+    public void setArea(float value) {
+        this.area = value;
+    }
+
+    /**
+     * Gets the value of the id property.
+     * 
+     */
     public int getId() {
         return id;
     }
-    public void setId(int id) {
-        this.id = id;
+
+    /**
+     * Sets the value of the id property.
+     * 
+     */
+    public void setId(int value) {
+        this.id = value;
+    }
+
+    /**
+     * Gets the value of the name property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * Sets the value of the name property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setName(String value) {
+        this.name = value;
+    }
+
+    /**
+     * Gets the value of the population property.
+     * 
+     */
+    public int getPopulation() {
+        return population;
+    }
+
+    /**
+     * Sets the value of the population property.
+     * 
+     */
+    public void setPopulation(int value) {
+        this.population = value;
     }
 
 }

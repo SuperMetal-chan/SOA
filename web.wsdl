@@ -1,6 +1,6 @@
 <definitions targetNamespace="http://country.lab1/" name="CountryWebserviceImplService"
-             xmlns:xsd="http://java.sun.com/xml/ns/persistence/orm" xmlns:wsam="http://www.w3.org/1999/xhtml"
-             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+             xmlns:wsam="http://www.w3.org/1999/xhtml"
+             xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 <types>
 <xsd:schema>
 <xsd:import namespace="http://country.lab1/" schemaLocation="http://localhost:8081/ws/country?xsd=1"/>
