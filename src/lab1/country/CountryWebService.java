@@ -1,8 +1,5 @@
 package lab1.country;
 
-//нужные импорты для работы с SOAP-веб-сервисом
-//import lab2.person.Country;
-
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;

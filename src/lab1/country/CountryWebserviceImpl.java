@@ -1,19 +1,13 @@
 package lab1.country;
 
-//import lab2.person.Person;
-//import lab2.person.PersonWebService;
-
 import javax.jws.WebService;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 /*
 определение мапинга веб-сервиса, именно здесь и присутствует пакет, о котором упоминалось раньше.
-* lab2.person - имя пакета
-* PersonWebService - имя интерфейса, интерфейс должен находится в этом пакете
-* */
+*/
 @WebService(endpointInterface = "lab1.country.CountryWebService")
-//реализация интерфейса PersonWebService
 public class CountryWebserviceImpl implements CountryWebService {
 
     //определение размера контейнера
@@ -28,8 +22,9 @@ public class CountryWebserviceImpl implements CountryWebService {
     static {
         for (int i = 0; i < CONTAINER_SIZE; i++) {
             int randomId = generateRandomNumber();
-            float area = generateRandomFloat();
-            container.put(randomId, new Country("Ukraine",  38000000, randomId, area));
+            int randomPopulation = RANDOM.nextInt(80000000);
+            float randomArea = generateRandomFloat();
+            container.put(randomId, new Country("Ukraine " + i,  randomPopulation, randomId, randomArea));
         }
     }
     // метод для генерации случайных числе по указанному диапазону
