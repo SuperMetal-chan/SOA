@@ -1,0 +1,91 @@
+<definitions xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://country.lab1/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://country.lab1/" name="CountryWebserviceImplService">
+    <types>
+        <xsd:schema>
+            <xsd:import namespace="http://country.lab1/" schemaLocation="http://localhost:8081/ws/country?xsd=1"/>
+        </xsd:schema>
+    </types>
+    <message name="getAllCountries"/>
+    <message name="getAllCountriesResponse">
+        <part name="return" type="tns:countryArray"/>
+    </message>
+    <message name="getCountryById">
+        <part name="arg0" type="xsd:int"/>
+    </message>
+    <message name="getCountryByIdResponse">
+        <part name="return" type="tns:country"/>
+    </message>
+    <message name="updateCountry">
+        <part name="arg0" type="tns:country"/>
+    </message>
+    <message name="updateCountryResponse">
+        <part name="return" type="xsd:boolean"/>
+    </message>
+    <message name="removeCountryById">
+        <part name="arg0" type="xsd:int"/>
+    </message>
+    <message name="removeCountryByIdResponse">
+        <part name="return" type="xsd:boolean"/>
+    </message>
+    <portType name="CountryWebService">
+        <operation name="getAllCountries">
+            <input wsam:Action="http://country.lab1/CountryWebService/getAllCountriesRequest" message="tns:getAllCountries"/>
+            <output wsam:Action="http://country.lab1/CountryWebService/getAllCountriesResponse" message="tns:getAllCountriesResponse"/>
+        </operation>
+        <operation name="getCountryById">
+            <input wsam:Action="http://country.lab1/CountryWebService/getCountryByIdRequest" message="tns:getCountryById"/>
+            <output wsam:Action="http://country.lab1/CountryWebService/getCountryByIdResponse" message="tns:getCountryByIdResponse"/>
+        </operation>
+        <operation name="updateCountry">
+            <input wsam:Action="http://country.lab1/CountryWebService/updateCountryRequest" message="tns:updateCountry"/>
+            <output wsam:Action="http://country.lab1/CountryWebService/updateCountryResponse" message="tns:updateCountryResponse"/>
+        </operation>
+        <operation name="removeCountryById">
+            <input wsam:Action="http://country.lab1/CountryWebService/removeCountryByIdRequest" message="tns:removeCountryById"/>
+            <output wsam:Action="http://country.lab1/CountryWebService/removeCountryByIdResponse" message="tns:removeCountryByIdResponse"/>
+        </operation>
+    </portType>
+    <binding name="CountryWebserviceImplPortBinding" type="tns:CountryWebService">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+        <operation name="getAllCountries">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal" namespace="http://country.lab1/"/>
+            </input>
+            <output>
+                <soap:body use="literal" namespace="http://country.lab1/"/>
+            </output>
+        </operation>
+        <operation name="getCountryById">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal" namespace="http://country.lab1/"/>
+            </input>
+            <output>
+                <soap:body use="literal" namespace="http://country.lab1/"/>
+            </output>
+        </operation>
+        <operation name="updateCountry">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal" namespace="http://country.lab1/"/>
+            </input>
+            <output>
+                <soap:body use="literal" namespace="http://country.lab1/"/>
+            </output>
+        </operation>
+        <operation name="removeCountryById">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal" namespace="http://country.lab1/"/>
+            </input>
+            <output>
+                <soap:body use="literal" namespace="http://country.lab1/"/>
+            </output>
+        </operation>
+    </binding>
+    <service name="CountryWebserviceImplService">
+        <port name="CountryWebserviceImplPort" binding="tns:CountryWebserviceImplPortBinding">
+            <soap:address location="http://localhost:8081/ws/country"/>
+        </port>
+    </service>
+</definitions>

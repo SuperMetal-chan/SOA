@@ -8,7 +8,7 @@ import java.util.Random;
 определение мапинга веб-сервиса, именно здесь и присутствует пакет, о котором упоминалось раньше.
 */
 @WebService(endpointInterface = "lab1.country.CountryWebService")
-public class CountryWebserviceImpl implements CountryWebService {
+public class CountryWebserviceImplService implements CountryWebService {
 
     //определение размера контейнера
     private static final int CONTAINER_SIZE = 10;
@@ -51,7 +51,7 @@ public class CountryWebserviceImpl implements CountryWebService {
         container.remove(id);
         return CountryExists || container.containsKey(id);
     }
-    //обновление данных объекта в данном случае имя и возраст, id не обновляется, т.к. служит ключом
+    //обновление данных объекта в данном случае название id не обновляется, т.к. служит ключом
     @Override
     public boolean updateCountry(Country country) {
         Country countryToUpdate = container.get(country.getId());
